@@ -1,14 +1,14 @@
 {
-    "name": "digitalocean-apps/sample-php",
-    "description": "Sample PHP application for App Platform",
+    "name": "sneakersgames/fantasyleague-export",
+    "description": "PDF Export - Sample PHP application for App Platform",
     "type": "project",
     "require": {
-        "alrik11es/cowsayphp": "^1.2"
+        "mpdf/mpdf": "^8.1"
     },
     "authors": [
         {
-            "name": "Kamal Nasser",
-            "email": "kamal@digitalocean.com"
+            "name": "Octavian Susnea",
+            "email": "octavian@sneakersgames.com"
         }
     ]
 }
