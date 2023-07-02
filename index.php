@@ -59,7 +59,7 @@ if ($jsonData === false) {
 
                 foreach ($position as $player) {
                     $mpdf->WriteHTML('<tr>');
-                    $mpdf->WriteHTML('<td>'.$player['id'].'</td><td>'.$player['short'].'</td><td>'.$player['clubName'].'</td><td>'.$player['points'].'</td>');
+                    $mpdf->WriteHTML('<td>'.$player['id'].'</td><td>'.$player['short'].'</td><td>'.$player['clubShort'].'</td><td>'.$player['seasonPoints'].'</td>');
                     $mpdf->WriteHTML('</tr>');
                 }
 
