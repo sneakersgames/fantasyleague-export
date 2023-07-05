@@ -76,7 +76,7 @@ if ($jsonData === false) {
         $filename = "Player List - Fantasy League" . date("Y-m-d H:i:s") . ".pdf";
 
         // Save the PDF file:
-        $mpdf->Output($filename, 'F');
+        $mpdf->Output($filename); //, 'F');
         //$mpdf->Output('myPdfFile.pdf', 'F');
 
         // if (! $forApi) {
