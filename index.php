@@ -46,18 +46,18 @@ if ($jsonData === false) {
         $positionList = [
             1 => 'GOALKEEPERS',
             2 => 'CENTRE-BACKS',
-            3 => 'MIDFIELDERS',
-            4 => 'STRIKERS',
             6 => 'FULL-BACKS',
             7 => 'DEFENSIVE MIDFIELDERS',
+            3 => 'MIDFIELDERS',
+            4 => 'STRIKERS',
         ];
-        foreach ($positions as $positionKey => $position) {
+        foreach ($positionList as $positionKey => $positionName) {
 
             // if ($data->where('position', $positionKey)->count()) {
                 $mpdf->WriteHTML('<table width="100%" border="0" style="font-size: 10px; font-family: sans-serif;">');
-                $mpdf->WriteHTML('<thead><tr><td></td><td colspan="3" style="font-weight: bold;margin-bottom:5px;margin-top:5px;">'.$positionList[$positionKey].'</td></tr><tr><td style="font-weight: bold;">Code</td><td style="font-weight: bold;">Name</td><td style="font-weight: bold;">Club</td><td style="font-weight: bold;">Pts</td></tr></thead>');
+                $mpdf->WriteHTML('<thead><tr><td></td><td colspan="3" style="font-weight: bold;margin-bottom:5px;margin-top:5px;">'.$positionName.'</td></tr><tr><td style="font-weight: bold;">Code</td><td style="font-weight: bold;">Name</td><td style="font-weight: bold;">Club</td><td style="font-weight: bold;">Pts</td></tr></thead>');
 
-                foreach ($position as $player) {
+                foreach ($positions[$positionKey] as $player) {
                     $mpdf->WriteHTML('<tr>');
                     $mpdf->WriteHTML('<td>'.$player['id'].'</td><td>'.$player['short'].'</td><td>'.$player['clubShort'].'</td><td>'.$player['seasonPoints'].'</td>');
                     $mpdf->WriteHTML('</tr>');
@@ -72,8 +72,11 @@ if ($jsonData === false) {
             // }
         }
 
+        //filename variable which is "filename" with timestamp appended at the end
+        $filename = "Player List - Fantasy League" . date("Y-m-d H:i:s") . ".pdf";
+
         // Save the PDF file:
-        $mpdf->Output();
+        $mpdf->Output($filename, 'F');
         //$mpdf->Output('myPdfFile.pdf', 'F');
 
         // if (! $forApi) {
