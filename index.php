@@ -45,11 +45,11 @@ if ($jsonData === false) {
         
         $positionList = [
             1 => 'GOALKEEPERS',
+            6 => 'FULL-BACKS',
             2 => 'CENTRE-BACKS',
             3 => 'MIDFIELDERS',
-            4 => 'STRIKERS',
-            6 => 'FULL-BACKS',
             7 => 'DEFENSIVE MIDFIELDERS',
+            4 => 'STRIKERS',
         ];
         // foreach ($positions as $positionKey => $position) {
 
@@ -93,11 +93,11 @@ if ($jsonData === false) {
             // }
         }
 
-        //filename variable which is "filename" with timestamp appended at the end
-        // $filename = "Player List - Fantasy League" . date("Y-m-d H:i:s") . ".pdf";
-
+        $filename = "Player List - Fantasy League" . date("Y-m-d H:i:s") . ".pdf";
+        $mpdf->Output($filename, 'I');
+        
         // Save the PDF file:
-        $mpdf->Output();
+        // $mpdf->Output();
         // $mpdf->Output($filename, 'F');
         //$mpdf->Output('myPdfFile.pdf', 'F');
 
