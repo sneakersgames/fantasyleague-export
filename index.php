@@ -75,8 +75,8 @@ if ($jsonData === false) {
         foreach ($positionList as $positionKey => $positionName) {
 
             // if ($data->where('position', $positionKey)->count()) {
-                $mpdf->WriteHTML('<table width="100%" border="0" style="font-size: 10px; font-family: sans-serif;">');
-                $mpdf->WriteHTML('<thead><tr><td></td><td colspan="3" style="font-weight: bold;margin-bottom:5px;margin-top:5px;">'.$positionName.'</td></tr><tr><td style="font-weight: bold;">Code</td><td style="font-weight: bold;">Name</td><td style="font-weight: bold;">Club</td><td style="font-weight: bold;">Pts</td></tr></thead>');
+                $mpdf->WriteHTML('<table width="100%" border="0" style="font-size: 11px; font-family: sans-serif;">');
+                $mpdf->WriteHTML('<thead><tr><td></td><td colspan="3" style="font-weight: bold;margin-bottom:10px;margin-top:5px;">'.$positionName.'</td></tr><tr><td style="font-weight: bold;">Code</td><td style="font-weight: bold;">Name</td><td style="font-weight: bold;">Club</td><td style="font-weight: bold;">Pts</td></tr></thead>');
 
                 foreach ($positions[$positionKey] as $player) {
                     $mpdf->WriteHTML('<tr>');
